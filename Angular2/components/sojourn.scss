@@ -1,0 +1,171 @@
+
+@import "../../../../style/main.scss";
+
+/* ==================================================================== */
+
+/* ----------- Page Sejour Contenu ----------- */
+
+.content {
+    margin-left: 12.5%;
+    background-color: $green-light;
+}
+
+/* ==================================================================== */
+
+/* ----------- Contenu Formulaire ----------- */
+
+.check {
+    display: flex;
+    justify-content: center;
+}
+
+/* ==================================================================== */
+
+/* Photos */
+
+.pictures{
+
+    /* Conteneur principal */
+    display: flex;
+    justify-content: space-between;
+
+    /* Iage plus texte */
+    .img{
+        width: 16%;
+        margin: 2%;
+        text-align: center;
+
+        .picture{
+            /* L'image elle meme */
+            border: $green-dark 2px solid;
+            background-color: $snow;
+            
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+
+            /* Icone de nouvelle photo */
+            .new-img {
+                position: relative;
+                img{
+                    padding: 31%;
+                    width: 100%;
+                    height: 100%;
+                    position: relative;
+                }
+                p{
+                    font-size: .8em;
+                    font-weight: 500;
+                    text-align: center;
+
+                    position: absolute;
+                    bottom: 0px;
+                }
+            }
+        }
+
+        /* Legende de l'image */
+        p{
+            font-size: .8em;
+            font-weight: 300;
+            padding-top: 5px; 
+        }
+    }
+}
+
+/* Effect hover bouton d'import d'image */
+
+.picture label{
+    opacity: 0;
+}
+
+.picture label:hover{
+    opacity: 0.8;
+    background-color: $snow;
+}
+
+/* ==================================================================== */
+
+/* Part "Repas" */
+
+.repas-title {
+    text-align: center;
+    font-style: italic;
+    font-size: 1.2em;
+    font-weight: 500;
+}
+
+.repas-row-title {
+    font-size: .85em;
+    font-weight: 100;
+    padding-top: 70px;
+
+    p {
+        margin-bottom: 16px;
+    }
+}
+
+.repas-col-title {
+    text-align: center;
+    font-size: .85em;
+}
+
+.repas-content {
+    background-color: $green-medium;
+    border-radius: 3px; 
+
+    .row {
+        padding: 5px;
+        margin-bottom: 0;
+    }
+
+    .input {
+        display: flex;
+        justify-content: space-around;
+
+        input {
+            width: 75%;
+            text-align: center;
+        }
+    }
+}
+
+.repas-content:first-child {
+    padding-top: 10px;
+}
+
+.repas-content:last-child {
+    padding-bottom: 10px;
+}
+
+/* ==================================================================== */
+
+/* ----------- media queries ----------- */
+
+/* ----------- desktop ----------- */
+@media only screen and (max-width:1200px) {
+
+
+}
+
+
+/* ----------- desktop medium ----------- */
+@media only screen and (max-width:1035px) {
+
+
+}
+
+
+/* ----------- tablette ----------- */
+@media only screen and (max-width:925px) {
+
+
+}
+
+
+
+/* ----------- mobile ----------- */
+@media only screen and (max-width: 768px) {
+
+ 
+}
