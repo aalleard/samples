@@ -1,0 +1,81 @@
+<div class="mihy-page" #page>
+	<div mihy-inner-container>
+		<!-- Onboarding progress bar -->
+		<section *ngIf="!appService.isPhone() && isOnboardingVisible()" class="onboarding">
+			<div class="row">
+				<mihy-legal-entity-onboarding (eOnboardingCompleted)="onOnboardingCompleted()"></mihy-legal-entity-onboarding>
+			</div>
+		</section>
+
+		<!-- Actions -->
+		<section>
+			<div class="row row-wrap">
+				<!-- Send a message -->
+				<div class="action-tile-wrapper">
+					<mihy-action-tile
+						sIcon="email"
+						sTitle="Envoyer un message"
+						(click)="onClickNewConversation()"
+					></mihy-action-tile>
+				</div>
+
+				<!-- Upload a document -->
+				<div class="action-tile-wrapper">
+					<mihy-action-tile
+						sIcon="cloud_upload"
+						sTitle="Déposer un document"
+						(click)="documentInput.click()"
+					></mihy-action-tile>
+				</div>
+
+				<!-- Take a picture -->
+				<div class="action-tile-wrapper" *ngIf="appService.isPhone()">
+					<mihy-action-tile
+						sIcon="camera_alt"
+						sTitle="Prendre une photo"
+						(click)="onClickTakePicture()"
+					></mihy-action-tile>
+				</div>
+
+				<!-- Download validated documents -->
+				<div class="action-tile-wrapper" *ngIf="!appService.isPhone()">
+					<mihy-action-tile
+						sIcon="cloud_download"
+						sTitle="Télécharger les données comptables"
+						(click)="onClickDownloadValidatedDocuments()"
+					></mihy-action-tile>
+				</div>
+			</div>
+		</section>
+
+		<!-- KPIs -->
+		<section *ngIf="!appService.isPhone()">
+			<div class="row">
+				<div class="col">
+					<div class="row row-wrap">
+						<div *ngFor="let oKpi of aKpis" [ngClass]="getKpiWrapperClass(oKpi)">
+							<mihy-kpi-tile [oKpi]="oKpi"></mihy-kpi-tile>
+						</div>
+					</div>
+				</div>
+				<div class="col">
+					<div class="row row-wrap">
+						<!-- Bank account history and balance -->
+						<div *ngFor="let oBankAccount of aBankAccounts" class="graph-tile-wrapper">
+							<mihy-bank-tile [oBankAccount]="oBankAccount"></mihy-bank-tile>
+						</div>
+
+						<!-- In/out history -->
+						<div class="graph-tile-wrapper">
+							<mihy-monthly-balances-tile></mihy-monthly-balances-tile>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	</div>
+</div>
+
+<!-- Hidden input for file upload -->
+<input hidden type="file" #documentInput (change)="onChangeDocumentInput($event.target.files)" multiple />
+

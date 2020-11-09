@@ -1,0 +1,37 @@
+<div mihy-inner-container>
+	<div class="tile-wrapper">
+
+		<!-- With real data -->
+		<div *ngIf="!bDummy" class="tile">
+			<div class="top" *ngIf="sTooltip.length > 0">
+				<div class="left"></div>
+				<div class="right">
+					<mat-icon
+						matTooltipClass="tooltip-with-return"
+						[matTooltip]="sTooltip"
+						[matTooltipPosition]="sTooltipPosition"
+						[matTooltipShowDelay]="iTooltipDelay"
+						>info</mat-icon
+					>
+				</div>
+			</div>
+			<div class="counter" [ngClass]="sColor">
+				{{ sCounter }}
+			</div>
+			<div class="title">
+				{{ sTitle }}
+			</div>
+		</div>
+
+		<!-- Dummy tile for loading -->
+		<div *ngIf="bDummy" class="tile dummy">
+			<div class="placeholder"></div>
+			<div class="placeholder"></div>
+			<div class="placeholder"></div>
+			<div class="placeholder"></div>
+			<div class="placeholder"></div>
+			<div class="placeholder"></div>
+			<div class="placeholder"></div>
+		</div>
+	</div>
+</div>

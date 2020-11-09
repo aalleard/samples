@@ -1,0 +1,29 @@
+@import "src/theme/theme-variables";
+@import "src/theme/dashboards/dashboards";
+
+.col {
+	width: 50%;
+	position: relative;
+}
+
+.action-tile-wrapper {
+	width: 100%;
+}
+
+.counter-tile-wrapper {
+	width: 50%;
+}
+
+.amount-tile-wrapper {
+	width: 100%;
+}
+
+.graph-tile-wrapper {
+	width: 100%;
+}
+
+.onboarding {
+	z-index: 1000;
+}
+
+@import "./sass/dashboard.tablet.scss";

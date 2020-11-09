@@ -1,0 +1,15 @@
+.mihy-tablet,
+.mihy-web {
+	.action-tile-wrapper,
+	.counter-tile-wrapper {
+		width: 33.3333%;
+	}
+
+	.amount-tile-wrapper {
+		width: 50%;
+	}
+
+	.tiles {
+		justify-content: flex-start;
+	}
+}

@@ -1,0 +1,28 @@
+<div mihy-inner-container [ngSwitch]="oKpi.type">
+	<!-- Counter -->
+	<mihy-counter-tile
+		*ngSwitchCase="'counter'"
+		[bDummy]="oKpi.dummy"
+		[sColor]="sCounterColor"
+		[sCounter]="oKpi.counter"
+		[sTitle]="oKpi.title"
+		[sTooltip]="oKpi.tooltip"
+		(click)="onClickKpi()"
+	></mihy-counter-tile>
+
+	<!-- Amount -->
+	<mihy-amount-tile
+		*ngSwitchCase="'amount'"
+		[bPositiveEvolution]="oKpi.positive_evolution"
+		[bVat]="oKpi.vat"
+		[iEvolution]="oKpi.evolution"
+		[iValue]="oKpi.value"
+		[sCurrency]="oKpi.currency"
+		[sInfo]="oKpi.subtitle"
+		[sTitle]="oKpi.title"
+		[sTooltip]="oKpi.tooltip"
+	></mihy-amount-tile>
+
+	<!-- Default: nothing -->
+	<div *ngSwitchDefault></div>
+</div>

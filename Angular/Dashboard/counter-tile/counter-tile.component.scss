@@ -1,0 +1,114 @@
+@import "src/theme/tiles/tiles.scss";
+
+:host {
+	@include mihy-fill;
+}
+
+.tile {
+	.top {
+		height: 0;
+		align-items: baseline;
+	}
+
+	.counter {
+		position: relative;
+		font-size: 36px;
+		font-weight: 500;
+		color: mat-color($app-primary);
+
+		&.accent {
+			color: mat-color($app-accent);
+		}
+
+		&.info {
+			color: mat-color($app-info);
+		}
+
+		&.primary {
+			color: mat-color($app-primary);
+		}
+
+		&.secondary {
+			color: mat-color($app-secondary, lighter);
+		}
+	}
+
+	.title {
+		text-align: center;
+	}
+
+	&.dummy {
+		height: 128px;
+
+		// Animation
+		animation-duration: 1.7s;
+		animation-fill-mode: forwards;
+		animation-iteration-count: infinite;
+		animation-timing-function: linear;
+		animation-name: placeholderAnimate;
+		background: mat-color($mat-grey, 200); // Fallback
+		background: linear-gradient(to right, mat-color($mat-grey, 200) 2%, mat-color($mat-grey, 400) 18%, mat-color($mat-grey, 200) 33%);
+		background-size: 1300px; // Animation Area
+		position: relative;
+
+		.placeholder {
+			position: absolute;
+			background: #fff;
+			z-index: 2;
+
+			&:nth-child(1) {
+				top: 0;
+				left: 0;
+				height: 24px;
+				width: 100%;
+			}
+
+			&:nth-child(2) {
+				top: 0;
+				left: 0;
+				height: 66px;
+				width: calc((100% - 42px) / 2);
+			}
+
+			&:nth-child(3) {
+				top: 0;
+				right: 0;
+				height: 66px;
+				width: calc((100% - 42px) / 2);
+			}
+
+			&:nth-child(4) {
+				top: 66px;
+				left: 0;
+				height: 16px;
+				width: 100%;
+			}
+
+			&:nth-child(5) {
+				top: 74px;
+				left: 0;
+				height: 20px;
+				width: calc((100% - 115px) / 2);
+			}
+
+			&:nth-child(6) {
+				top: 74px;
+				right: 0;
+				height: 20px;
+				width: calc((100% - 115px) / 2);
+			}
+
+			&:nth-child(7) {
+				bottom: 0;
+				left: 0;
+				height: 34px;
+				width: 100%;
+			}
+		}
+	}
+}
+
+@keyframes placeholderAnimate {
+    0%{ background-position: -650px 0; }
+    100%{ background-position: 650px 0; }
+}
