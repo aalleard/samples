@@ -29,3 +29,15 @@ Il aura pour autre utilité de centraliser la gestion des actions utilisateur. C
 Ce répertoire contient un composant servant à afficher un KPI de type compteur tout simple
 
 Aucune intelligence n'y est présente, son rôle se limite à la mise en forme
+
+
+## BaseComponent
+
+Tous les composants héritent d'un super-composant abstrait appelé BaseComponent (non présenté ici).
+
+Ce dernier est en charge de :
+* injecter les services
+* gérer les OnInit et OnDestroy
+* déclarer les attributes génériques utiles aux composants
+* gérer les modales de manière centralisée
+* ...
